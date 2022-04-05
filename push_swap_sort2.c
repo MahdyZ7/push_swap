@@ -6,7 +6,7 @@
 /*   By: ayassin <ayassin@student.42abudhabi.ae>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/14 16:13:31 by ayassin           #+#    #+#             */
-/*   Updated: 2022/04/03 22:30:24 by ayassin          ###   ########.fr       */
+/*   Updated: 2022/04/05 08:03:57 by ayassin          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,8 +18,6 @@ void		save_move(char **mem, char *mv, int8_t pref);
 static char	*push_half(t_cdlist **lsta, t_cdlist **lstb, int n, int8_t pref);
 char		*simple_sort(t_cdlist **lst, t_cdlist **aux, int n, int8_t pref);
 char		*gsort(t_cdlist **lsta, t_cdlist **lstb, int n, int8_t pref);
-
-
 
 /* The move (mv) is assgined to a list based on (pref) and apended to the end 
 of memory string (mem) containing all the moves*/
@@ -80,8 +78,8 @@ char	*simple_sort(t_cdlist **lst, t_cdlist **aux, int n, int8_t pref)
 	else if (n > 2)
 	{
 		push_half(lst, aux, n, pref);
-		gsort(lst, aux, n - pushed, pref);
-		gsort(aux, lst, pushed, -pref);
+		simple_sort(lst, aux, n - pushed, pref);
+		simple_sort(aux, lst, pushed, -pref);
 		while (pushed-- > 0)
 			top_push(aux, lst);
 	}

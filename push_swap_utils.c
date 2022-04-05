@@ -6,7 +6,7 @@
 /*   By: ayassin <ayassin@student.42abudhabi.ae>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/28 18:22:09 by ayassin           #+#    #+#             */
-/*   Updated: 2022/04/03 22:13:12 by ayassin          ###   ########.fr       */
+/*   Updated: 2022/04/04 08:35:40 by ayassin          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -100,7 +100,7 @@ int	ft_strncmp(const char *s1, const char *s2, size_t n)
 int	o_atoi(char **str, int8_t *flag)
 {
 	int				sign;
-	unsigned int	num;
+	unsigned long	num;
 
 	sign = 1;
 	num = 0;
